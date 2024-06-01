@@ -1,10 +1,11 @@
 Program Kasir Buku dibuat oleh :
-1. Hamid Sabirin (2311102129) 
+
+1. Hamid Sabirin (2311102129)
 2. Danendra Arden Shaduq (2311102146)
 
 # Program Kasir Toko Buku
 
-Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, dan array.
+Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, array, perulangan, dan percabangan.
 
 ## Fitur
 
@@ -20,12 +21,12 @@ Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkink
 
 ## Fungsi Utama
 
-1. tampilkanMenu(): Menampilkan menu utama program.
-2. tampilkanInfoBuku(const Buku &buku): Menampilkan informasi detail dari sebuah buku.
-3. tampilkanDaftarBuku(const vector<Buku> &daftarBuku): Menampilkan daftar buku yang tersedia.
-4. pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih): Memilih buku dari daftar dan menambahkannya ke stack buku yang dipilih.
-5. editBuku(vector<Buku> &daftarBuku): Mengedit informasi buku yang ada dalam daftar.
-6. bayarBuku(stack<Buku> &bukuDipilih): Memproses pembayaran buku yang dipilih oleh pengguna.
+1. tampilkanMenu() : Menampilkan menu utama program.
+2. tampilkanInfoBuku(const Buku &buku) : Menampilkan informasi detail dari sebuah buku.
+3. tampilkanDaftarBuku(const vector<Buku> &daftarBuku) : Menampilkan daftar buku yang tersedia.
+4. pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih) : Memilih buku dari daftar dan menambahkannya ke stack buku yang dipilih.
+5. editBuku(vector<Buku> &daftarBuku) : Mengedit informasi buku yang ada dalam daftar.
+6. bayarBuku(stack<Buku> &bukuDipilih) : Memproses pembayaran buku yang dipilih oleh pengguna.
 
 ## Cara Menggunakan
 
