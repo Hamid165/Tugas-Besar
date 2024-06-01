@@ -5,7 +5,7 @@
 #include <stack>
 
 using namespace std;
-
+// menampung tipe data yang berbeda
 struct Buku
 {
     int id;
@@ -14,7 +14,7 @@ struct Buku
     double harga;
     int stok;
 };
-
+// menu dari toko buku
 void tampilkanMenu()
 {
     cout << "|===================================================|" << endl;
@@ -28,13 +28,13 @@ void tampilkanMenu()
     cout << "|===================================================|" << endl;
     cout << "Masukan Pilihan : ";
 }
-
+// menampilkan info buku dengan bentuk tabel
 void tampilkanInfoBuku(const Buku &buku)
 {
     cout << "| " << setw(7) << left << buku.id << "|" << setw(36) << left << buku.judul << " | "
          << setw(13) << left << buku.jenis << "   | " << setw(7) << left << "Rp " << fixed << setprecision(2) << buku.harga << " | " << setw(3) << left << buku.stok << "  |" << endl;
 }
-
+// menampilkan daftar buku dalam bentuk tabel
 void tampilkanDaftarBuku(const vector<Buku> &daftarBuku)
 {
     cout << "|==========================================================================================|" << endl;
@@ -48,7 +48,7 @@ void tampilkanDaftarBuku(const vector<Buku> &daftarBuku)
     }
     cout << "|==========================================================================================|" << endl;
 }
-
+// memilih buku yang akan dibeli
 void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
 {
     cout << "|==========================================================================================|" << endl;
@@ -100,7 +100,7 @@ void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
         cout << "Buku dengan ID tersebut tidak ditemukan!" << endl;
     }
 }
-
+// unutuk merubah atau mengupdate sebuah buku pada daftar buku
 void editBuku(vector<Buku> &daftarBuku)
 {
     cout << "|==========================================================================================|" << endl;
@@ -143,7 +143,7 @@ void editBuku(vector<Buku> &daftarBuku)
         cout << "Buku tidak ditemukan!" << endl;
     }
 }
-
+// membayar buku yang telah di pilih
 void bayarBuku(stack<Buku> &bukuDipilih)
 {
     if (bukuDipilih.empty())
@@ -155,7 +155,6 @@ void bayarBuku(stack<Buku> &bukuDipilih)
     double totalHarga = 0.0;
     stack<Buku> tempStack;
 
-    // Menghitung total harga buku dan memindahkan ke stack sementara
     while (!bukuDipilih.empty())
     {
         totalHarga += bukuDipilih.top().harga;
@@ -182,7 +181,6 @@ void bayarBuku(stack<Buku> &bukuDipilih)
     {
         cout << "Pembayaran gagal, uang kurang!" << endl;
 
-        // Mengembalikan buku ke stack bukuDipilih jika pembayaran gagal
         while (!tempStack.empty())
         {
             bukuDipilih.push(tempStack.top());
@@ -192,13 +190,12 @@ void bayarBuku(stack<Buku> &bukuDipilih)
         return;
     }
 
-    // Mengosongkan stack sementara karena pembayaran berhasil
     while (!tempStack.empty())
     {
         tempStack.pop();
     }
 }
-
+// menampilkan list dari buku yang telah disediakan dari toko buku
 void listBuku(vector<Buku> &daftarBuku)
 {
     daftarBuku = {
@@ -214,7 +211,7 @@ void listBuku(vector<Buku> &daftarBuku)
         {10, "The Hunger Games ", "Fiksi  ", 130000, 8},
     };
 }
-
+// fungsi utama program
 int main()
 {
     vector<Buku> daftarBuku;

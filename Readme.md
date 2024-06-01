@@ -1,18 +1,22 @@
+Program Kasir Buku dibuat oleh :
+1. Hamid Sabirin (2311102129) 
+2. Danendra Arden Shaduq (2311102146)
+
 # Program Kasir Toko Buku
 
-Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack untuk menangani buku yang dipilih.
+Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, dan array.
 
 ## Fitur
 
-1. **Pilih Buku dari List**: Pengguna dapat memilih buku dari daftar buku yang tersedia.
-2. **Edit Buku**: Pengguna dapat mengedit informasi buku yang ada.
-3. **Bayar Buku yang Dipilih**: Pengguna dapat membayar buku yang telah dipilih.
-4. **Tampilkan Buku**: Pengguna dapat menampilkan daftar buku yang tersedia.
-5. **Keluar**: Mengakhiri program.
+1. Pilih Buku dari List: Pengguna dapat memilih buku dari daftar buku yang tersedia.
+2. Edit Buku: Pengguna dapat mengedit informasi buku yang ada.
+3. Bayar Buku yang Dipilih: Pengguna dapat membayar buku yang telah dipilih.
+4. Tampilkan Buku: Pengguna dapat menampilkan daftar buku yang tersedia.
+5. Keluar: Mengakhiri program.
 
 ## Flowchart
 
-![Flowchart URL](https://example.com/flowchart.png)
+![Flowchart URL](https://github.com/Hamid165/Tugas-Besar/blob/07b5e963f7d4d93376db00a4ebe4fdb8ed107003/assets/Flowchart.jpg)
 
 ## Fungsi Utama
 
