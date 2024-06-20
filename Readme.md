@@ -3,7 +3,7 @@ Program Kasir Buku dibuat oleh :
 1. Hamid Sabirin (2311102129)
 2. Danendra Arden Shaduq (2311102146)
 
-# Program Kasir Toko Buku
+<h1 align="center">PROGRAM KASIR TOKO BUKU</h1>
 
 ## Latar Belakang
 
@@ -11,7 +11,7 @@ Persaingan dalam penjualan buku saat ini semakin ketat. Selain kualitas koleksi 
 
 ## Penjelasan
 
-Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, array, perulangan, dan percabangan.
+Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, array, dan struct.
 
 ## Fitur
 
