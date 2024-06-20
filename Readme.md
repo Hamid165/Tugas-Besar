@@ -21,7 +21,7 @@ Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkink
 
 ## Flowchart
 
-![Flowchart URL](https://github.com/Hamid165/Tugas-Besar/blob/07b5e963f7d4d93376db00a4ebe4fdb8ed107003/assets/Flowchart.jpg)
+![Flowchart URL](https://github.com/Hamid165/Tugas-Besar/blob/main/assets/flowchart.png)
 
 ## Fungsi Utama
 
