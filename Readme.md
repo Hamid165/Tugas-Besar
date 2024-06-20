@@ -6,17 +6,11 @@ Program Kasir Buku dibuat oleh :
 # Program Kasir Toko Buku
 
 ## Latar Belakang
-<<<<<<< HEAD
 
 Persaingan dalam penjualan buku saat ini semakin ketat. Selain kualitas koleksi buku, pengalaman layanan juga merupakan faktor penting dalam reputasi toko. Beberapa toko buku menerapkan sistem informasi untuk mengatasi permasalahan umum dalam proses bisnisnya, seperti mendata stok buku yang tersedia, transaksi pembayaran, pengelolaan stok buku. Banyak proses yang dijelaskan di atas masih dilakukan secara manual oleh penjual buku. Tentu saja, untuk toko buku menengah hingga besar, hal ini sangat tidak efisien karena membutuhkan banyak waktu dan tenaga. Selain itu, kurangnya proses bisnis yang jelas dan komitmen yang kuat terhadap penerapannya dapat meningkatkan risiko kesalahan individu atau “kesalahan manusia”. Pemilihan teknologi untuk sistem harus disesuaikan dengan kebutuhan dan proses bisnis toko buku. Hal ini berdampak langsung pada efisiensi layanan dan pengelolaan toko buku.
 
 ## Penjelasan
 
-=======
-Persaingan dalam penjualan buku saat ini semakin ketat. Selain kualitas koleksi buku, pengalaman layanan juga merupakan faktor penting dalam reputasi toko. Beberapa toko buku menerapkan sistem informasi untuk mengatasi permasalahan umum dalam proses bisnisnya, seperti mendata stok buku yang tersedia, transaksi pembayaran, pengelolaan stok buku. Banyak proses yang dijelaskan di atas masih dilakukan secara manual oleh penjual buku. Tentu saja, untuk toko buku menengah hingga besar, hal ini sangat tidak efisien karena membutuhkan banyak waktu dan tenaga. Selain itu, kurangnya proses bisnis yang jelas dan komitmen yang kuat terhadap penerapannya dapat meningkatkan risiko kesalahan individu atau “kesalahan manusia”. Pemilihan teknologi untuk sistem harus disesuaikan dengan kebutuhan dan proses bisnis toko buku. Hal ini berdampak langsung pada efisiensi layanan dan pengelolaan toko buku.
-
-## Penjelasan 
->>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
 Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkinkan pengguna untuk memilih buku dari daftar, mengedit informasi buku, melakukan pembayaran untuk buku yang dipilih, serta menampilkan daftar buku yang tersedia dan terbaru. Program ini dibuat menggunakan bahasa pemrograman C++ dan memanfaatkan konsep stack, searching, array, perulangan, dan percabangan.
 
 ## Fitur
@@ -31,7 +25,7 @@ Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkink
 
 ## Flowchart
 
-![Flowchart URL](https://github.com/Hamid165/Tugas-Besar/blob/main/assets/flowchart.png)
+![Flowchart URL](https://github.com/Hamid165/Tugas-Besar/blob/07b5e963f7d4d93376db00a4ebe4fdb8ed107003/assets/Flowchart.jpg)
 
 ## Fungsi Utama
 
