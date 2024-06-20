@@ -106,7 +106,10 @@ void PilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
 // menambahkan buku
 void TambahBuku(vector<Buku> &daftarBuku)
 {
+<<<<<<< HEAD
     // Membuat objek buku baru
+=======
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
     Buku bukuBaru;
     cout << "Masukkan judul buku: ";
     cin.ignore();
@@ -131,6 +134,10 @@ void TambahBuku(vector<Buku> &daftarBuku)
     // Menambahkan buku baru ke dalam daftar buku
     daftarBuku.push_back(bukuBaru);
     cout << "Buku berhasil ditambahkan!" << endl;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
 }
 
 // unutuk merubah atau mengupdate sebuah buku pada daftar buku
@@ -184,11 +191,18 @@ int CariBuku(const vector<Buku> &daftarBuku, int idBuku)
     {
         if (daftarBuku[i].id == idBuku)
         {
+<<<<<<< HEAD
             // Mengembalikan indeks buku jika ditemukan
             return i;
         }
     }
     return -1; 
+=======
+            return i; // Mengembalikan indeks buku jika ditemukan
+        }
+    }
+    return -1; // Mengembalikan -1 jika buku tidak ditemukan
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
 }
 
 // membayar buku yang telah di pilih
@@ -247,11 +261,18 @@ void BayarBuku(stack<Buku> &bukuDipilih)
 // fungsi untuk mencari buku berdasarkan id buku
 void CariBukuByID(const vector<Buku> &daftarBuku)
 {
+<<<<<<< HEAD
     // Memasukkan ID buku yang ingin dicari
     int idCari;
     cout << "Masukkan ID buku yang ingin dicari: ";
     cin >> idCari;
     // Mencari buku berdasarkan ID
+=======
+    int idCari;
+    cout << "Masukkan ID buku yang ingin dicari: ";
+    cin >> idCari;
+
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
     int idx = CariBuku(daftarBuku, idCari);
     if (idx != -1)
     {
@@ -292,18 +313,25 @@ int main()
     vector<Buku> daftarBuku;
     // Membuat stack untuk menyimpan buku yang dipilih
     stack<Buku> bukuDipilih;
+<<<<<<< HEAD
     // Menambahkan buku ke dalam daftar buku
+=======
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
     ListBuku(daftarBuku);
     int menu;
     do
     {
+<<<<<<< HEAD
         // Menampilkan menu
+=======
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
         TampilkanMenu();
         cin >> menu;
 
         switch (menu)
         {
         case 1:
+<<<<<<< HEAD
             PilihBuku(daftarBuku, bukuDipilih);
             break;
         case 2:
@@ -314,6 +342,18 @@ int main()
             break;
         case 4:
             TampilkanDaftarBuku(daftarBuku);
+=======
+            TampilkanDaftarBuku(daftarBuku);
+            break;
+        case 2:
+            PilihBuku(daftarBuku, bukuDipilih);
+            break;
+        case 3:
+            EditBuku(daftarBuku);
+            break;
+        case 4:
+            BayarBuku(bukuDipilih);
+>>>>>>> b3aec85d715f5b1a9f70013a949745573afe8f74
             break;
         case 5:
             CariBukuByID(daftarBuku);
@@ -323,6 +363,7 @@ int main()
             break;
         case 7:
             cout << "Terima kasih telah menggunakan program ini!" << endl;
+
             break;
         default:
             cout << "Menu tidak valid!" << endl;
