@@ -3,8 +3,8 @@
 #include <string>
 #include <iomanip>
 #include <stack>
-
 using namespace std;
+
 // menampung tipe data yang berbeda
 struct Buku
 {
@@ -15,27 +15,29 @@ struct Buku
     int stok;
 };
 // menu dari toko buku
-void tampilkanMenu()
+void TampilkanMenu()
 {
     cout << "|===================================================|" << endl;
     cout << "|              Program Kasir Toko Buku              |" << endl;
     cout << "|===================================================|" << endl;
-    cout << "|1. Pilih Buku dari List                            |" << endl;
-    cout << "|2. Edit Buku                                       |" << endl;
-    cout << "|3. Bayar Buku yang Dipilih                         |" << endl;
-    cout << "|4. Tampilkan buku                                  |" << endl;
-    cout << "|5. Keluar                                          |" << endl;
+    cout << "|1. Tampilkan buku                                  |" << endl;
+    cout << "|2. Pilih Buku dari List                            |" << endl;
+    cout << "|3. Edit Buku                                       |" << endl;
+    cout << "|4. Bayar Buku yang Dipilih                         |" << endl;
+    cout << "|5. Cari Buku berdasarkan ID                        |" << endl;
+    cout << "|6. Tambah Buku Baru                                |" << endl;
+    cout << "|7. Keluar                                          |" << endl;
     cout << "|===================================================|" << endl;
     cout << "Masukan Pilihan : ";
 }
 // menampilkan info buku dengan bentuk tabel
-void tampilkanInfoBuku(const Buku &buku)
+void TampilkanInfoBuku(const Buku &buku)
 {
     cout << "| " << setw(7) << left << buku.id << "|" << setw(36) << left << buku.judul << " | "
          << setw(13) << left << buku.jenis << "   | " << setw(7) << left << "Rp " << fixed << setprecision(2) << buku.harga << " | " << setw(3) << left << buku.stok << "  |" << endl;
 }
 // menampilkan daftar buku dalam bentuk tabel
-void tampilkanDaftarBuku(const vector<Buku> &daftarBuku)
+void TampilkanDaftarBuku(const vector<Buku> &daftarBuku)
 {
     cout << "|==========================================================================================|" << endl;
     cout << "|                                      Daftar Buku                                         |" << endl;
@@ -44,12 +46,12 @@ void tampilkanDaftarBuku(const vector<Buku> &daftarBuku)
     cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
     for (const Buku &buku : daftarBuku)
     {
-        tampilkanInfoBuku(buku);
+        TampilkanInfoBuku(buku);
     }
     cout << "|==========================================================================================|" << endl;
 }
 // memilih buku yang akan dibeli
-void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
+void PilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
 {
     cout << "|==========================================================================================|" << endl;
     cout << "|                                      Daftar Buku                                         |" << endl;
@@ -58,14 +60,15 @@ void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
     cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
     for (const Buku &buku : daftarBuku)
     {
-        tampilkanInfoBuku(buku);
+        TampilkanInfoBuku(buku);
     }
+    // menampilkan daftar buku yang ada
     cout << "|==========================================================================================|" << endl;
     cout << "\n";
     int pilihanBuku;
     cout << "Pilih ID buku yang ingin Anda pilih: ";
     cin >> pilihanBuku;
-
+    // memilih buku yang akan dibeli
     bool bukuDitemukan = false;
     for (Buku &buku : daftarBuku)
     {
@@ -78,7 +81,7 @@ void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
                 cout << "|==========================================================================================|" << endl;
                 cout << "| ID     | Nama Buku                           | Jenis           | Harga            | Stok |" << endl;
                 cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
-                tampilkanInfoBuku(buku);
+                TampilkanInfoBuku(buku);
                 bukuDipilih.push(buku);
                 buku.stok--;
                 bukuDitemukan = true;
@@ -94,14 +97,44 @@ void pilihBuku(vector<Buku> &daftarBuku, stack<Buku> &bukuDipilih)
             }
         }
     }
-
+    // jika buku tidak ditemukan
     if (!bukuDitemukan)
     {
         cout << "Buku dengan ID tersebut tidak ditemukan!" << endl;
     }
 }
+// menambahkan buku
+void TambahBuku(vector<Buku> &daftarBuku)
+{
+    // Membuat objek buku baru
+    Buku bukuBaru;
+    cout << "Masukkan judul buku: ";
+    cin.ignore();
+    getline(cin, bukuBaru.judul);
+    cout << "Masukkan jenis buku: ";
+    getline(cin, bukuBaru.jenis);
+    cout << "Masukkan harga buku: ";
+    cin >> bukuBaru.harga;
+    cout << "Masukkan stok buku: ";
+    cin >> bukuBaru.stok;
+
+    // Menghitung ID baru dengan cara menambahkan 1 dari ID buku terakhir
+    if (daftarBuku.empty())
+    {
+        bukuBaru.id = 1;
+    }
+    else
+    {
+        bukuBaru.id = daftarBuku.back().id + 1;
+    }
+
+    // Menambahkan buku baru ke dalam daftar buku
+    daftarBuku.push_back(bukuBaru);
+    cout << "Buku berhasil ditambahkan!" << endl;
+}
+
 // unutuk merubah atau mengupdate sebuah buku pada daftar buku
-void editBuku(vector<Buku> &daftarBuku)
+void EditBuku(vector<Buku> &daftarBuku)
 {
     cout << "|==========================================================================================|" << endl;
     cout << "|                                      Daftar Buku                                         |" << endl;
@@ -110,14 +143,15 @@ void editBuku(vector<Buku> &daftarBuku)
     cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
     for (const Buku &buku : daftarBuku)
     {
-        tampilkanInfoBuku(buku);
+        TampilkanInfoBuku(buku);
     }
     cout << "|==========================================================================================|" << endl;
-
+    // memasukkan id buku yang akan di edit
     int idEdit;
     cout << "Masukkan ID buku yang akan diedit: ";
     cin >> idEdit;
 
+    // mengubah data buku
     bool found = false;
     for (Buku &buku : daftarBuku)
     {
@@ -143,18 +177,33 @@ void editBuku(vector<Buku> &daftarBuku)
         cout << "Buku tidak ditemukan!" << endl;
     }
 }
-// membayar buku yang telah di pilih
-void bayarBuku(stack<Buku> &bukuDipilih)
+// fungsi untuk mencari buku
+int CariBuku(const vector<Buku> &daftarBuku, int idBuku)
 {
+    for (int i = 0; i < daftarBuku.size(); ++i)
+    {
+        if (daftarBuku[i].id == idBuku)
+        {
+            // Mengembalikan indeks buku jika ditemukan
+            return i;
+        }
+    }
+    return -1; 
+}
+
+// membayar buku yang telah di pilih
+void BayarBuku(stack<Buku> &bukuDipilih)
+{
+    // Jika tidak ada buku yang dipilih
     if (bukuDipilih.empty())
     {
         cout << "Silakan pilih buku terlebih dahulu sebelum melakukan pembayaran!" << endl;
         return;
     }
-
+    // Menghitung total harga buku yang dipilih
     double totalHarga = 0.0;
     stack<Buku> tempStack;
-
+    // Menghitung total harga buku yang dipilih
     while (!bukuDipilih.empty())
     {
         totalHarga += bukuDipilih.top().harga;
@@ -163,11 +212,11 @@ void bayarBuku(stack<Buku> &bukuDipilih)
     }
 
     cout << "Total harga buku yang dipilih: " << totalHarga << endl;
-
+    // Memasukkan uang yang dibayarkan
     double uang;
     cout << "Masukkan jumlah uang: ";
     cin >> uang;
-
+    // Mengecek apakah uang yang dibayarkan cukup
     if (uang == totalHarga)
     {
         cout << "Pembayaran berhasil, uang pas!" << endl;
@@ -195,8 +244,33 @@ void bayarBuku(stack<Buku> &bukuDipilih)
         tempStack.pop();
     }
 }
+// fungsi untuk mencari buku berdasarkan id buku
+void CariBukuByID(const vector<Buku> &daftarBuku)
+{
+    // Memasukkan ID buku yang ingin dicari
+    int idCari;
+    cout << "Masukkan ID buku yang ingin dicari: ";
+    cin >> idCari;
+    // Mencari buku berdasarkan ID
+    int idx = CariBuku(daftarBuku, idCari);
+    if (idx != -1)
+    {
+        cout << "|==========================================================================================|" << endl;
+        cout << "|                                      Daftar Buku                                         |" << endl;
+        cout << "|==========================================================================================|" << endl;
+        cout << "| ID     | Nama Buku                           | Jenis           | Harga            | Stok |" << endl;
+        cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
+        TampilkanInfoBuku(daftarBuku[idx]);
+        cout << "|==========================================================================================|" << endl;
+    }
+    else
+    {
+        cout << "Buku dengan ID tersebut tidak ditemukan!" << endl;
+    }
+}
+
 // menampilkan list dari buku yang telah disediakan dari toko buku
-void listBuku(vector<Buku> &daftarBuku)
+void ListBuku(vector<Buku> &daftarBuku)
 {
     daftarBuku = {
         {1, "Harry Potter and the Sorcerer's ", "Fantasi", 100000, 5},
@@ -214,37 +288,47 @@ void listBuku(vector<Buku> &daftarBuku)
 // fungsi utama program
 int main()
 {
+    // Membuat vector untuk menyimpan daftar buku
     vector<Buku> daftarBuku;
+    // Membuat stack untuk menyimpan buku yang dipilih
     stack<Buku> bukuDipilih;
-    listBuku(daftarBuku);
+    // Menambahkan buku ke dalam daftar buku
+    ListBuku(daftarBuku);
     int menu;
     do
     {
-        tampilkanMenu();
+        // Menampilkan menu
+        TampilkanMenu();
         cin >> menu;
 
         switch (menu)
         {
         case 1:
-            pilihBuku(daftarBuku, bukuDipilih);
+            PilihBuku(daftarBuku, bukuDipilih);
             break;
         case 2:
-            editBuku(daftarBuku);
+            EditBuku(daftarBuku);
             break;
         case 3:
-            bayarBuku(bukuDipilih);
+            BayarBuku(bukuDipilih);
             break;
         case 4:
-            tampilkanDaftarBuku(daftarBuku);
+            TampilkanDaftarBuku(daftarBuku);
             break;
         case 5:
+            CariBukuByID(daftarBuku);
+            break;
+        case 6:
+            TambahBuku(daftarBuku);
+            break;
+        case 7:
             cout << "Terima kasih telah menggunakan program ini!" << endl;
             break;
         default:
             cout << "Menu tidak valid!" << endl;
         }
 
-    } while (menu != 5);
+    } while (menu != 7);
 
     return 0;
 }
