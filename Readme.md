@@ -41,7 +41,9 @@ Program ini adalah aplikasi kasir untuk sebuah toko buku. Program ini memungkink
 ## Cara Menggunakan
 
    1. Jalankan program.
-   2. Pilih menu yang diinginkan dengan memasukkan angka yang sesuai.
-   3. Tambah buku dalam pembelian / bayar.
-   4. Bayar buku dengan nominal pas / lebih.
-   5. Untuk keluar, pilih opsi "Keluar" pada menu utama.
+   2. Pilih menu yang diinginkan dengan memasukkan angka yang sesuai pada menu.
+   3. Menambahkan buku (jika ada buku baru)
+   4. Pilih buku dalam pembelian / bayar.
+   5. Mencari buku jika ingin mencari sebuah buku
+   6. Bayar buku dengan nominal pas / lebih.
+   7. Untuk keluar, pilih opsi "Keluar" pada menu utama.
