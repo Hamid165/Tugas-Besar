@@ -20,10 +20,10 @@ void TampilkanMenu()
     cout << "|===================================================|" << endl;
     cout << "|              Program Kasir Toko Buku              |" << endl;
     cout << "|===================================================|" << endl;
-    cout << "|1. Tampilkan buku                                  |" << endl;
-    cout << "|2. Pilih Buku dari List                            |" << endl;
-    cout << "|3. Edit Buku                                       |" << endl;
-    cout << "|4. Bayar Buku yang Dipilih                         |" << endl;
+    cout << "|1. Pilih Buku dari List                            |" << endl;
+    cout << "|2. Edit Buku                                       |" << endl;
+    cout << "|3. Bayar Buku yang Dipilih                         |" << endl;
+    cout << "|4. Tampilkan buku                                  |" << endl;
     cout << "|5. Cari Buku berdasarkan ID                        |" << endl;
     cout << "|6. Tambah Buku Baru                                |" << endl;
     cout << "|7. Keluar                                          |" << endl;
@@ -180,7 +180,7 @@ void EditBuku(vector<Buku> &daftarBuku)
 // fungsi untuk mencari buku
 int CariBuku(const vector<Buku> &daftarBuku, int idBuku)
 {
-    for (int i = 0; i < daftarBuku.size(); ++i)
+    for (vector<Buku>::size_type i = 0; i < daftarBuku.size(); ++i)
     {
         if (daftarBuku[i].id == idBuku)
         {
