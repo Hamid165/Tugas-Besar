@@ -188,7 +188,7 @@ int CariBuku(const vector<Buku> &daftarBuku, int idBuku)
             return i;
         }
     }
-    return -1; 
+    return -1;
 }
 
 // membayar buku yang telah di pilih
@@ -203,13 +203,21 @@ void BayarBuku(stack<Buku> &bukuDipilih)
     // Menghitung total harga buku yang dipilih
     double totalHarga = 0.0;
     stack<Buku> tempStack;
-    // Menghitung total harga buku yang dipilih
+    // Menampilkan daftar buku yang dipilih
+    cout << "|==========================================================================================|" << endl;
+    cout << "|                                 Buku yang Dipilih                                        |" << endl;
+    cout << "|==========================================================================================|" << endl;
+    cout << "| ID     | Nama Buku                           | Jenis           | Harga            | Stok |" << endl;
+    cout << "|--------|-------------------------------------|-----------------|------------------|------|" << endl;
     while (!bukuDipilih.empty())
     {
-        totalHarga += bukuDipilih.top().harga;
-        tempStack.push(bukuDipilih.top());
+        const Buku &buku = bukuDipilih.top();
+        TampilkanInfoBuku(buku);
+        totalHarga += buku.harga;
+        tempStack.push(buku);
         bukuDipilih.pop();
     }
+    cout << "|==========================================================================================|" << endl;
 
     cout << "Total harga buku yang dipilih: " << totalHarga << endl;
     // Memasukkan uang yang dibayarkan
